@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHÓM TRẺ ĐỘC LẬP THÁI DƯƠNG</title><style>
+:root{
+  --primary:#f6a623;--primary2:#ffd166;--blue:#2c7da0;--green:#69b578;
+  --dark:#21404d;--text:#60717a;--light:#fffaf0;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--dark);color:#fff;font-size:14px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:15px}
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 4px 18px #18364218}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--dark);font-size:19px}
+.logo-mark{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffd166,#f6a623);font-size:25px}
+nav{display:flex;align-items:center;gap:25px}
+nav a{font-weight:700;font-size:15px;color:#4b6069}
+nav a:hover{color:var(--primary)}
+.menu-btn{display:none;border:0;background:var(--primary);color:#fff;padding:10px 13px;border-radius:10px;font-size:20px}
+
+.hero{background:linear-gradient(115deg,#fff7dc 0%,#f2fbff 100%);padding:76px 0 65px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.kicker{display:inline-block;background:#fff;padding:8px 16px;border-radius:30px;color:#d98a00;font-weight:800;margin-bottom:17px;box-shadow:0 5px 20px #b9852412}
+h1{font-size:54px;line-height:1.08;color:var(--dark);margin-bottom:20px}
+.hero p{font-size:18px;max-width:610px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 21px;border-radius:30px;font-weight:800}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-outline{border:2px solid var(--primary);color:#c47c00;background:#fff}
+.hero-visual{
+    min-height:390px;
+    border-radius:38px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 25px 60px #3f8ca022;
+}
+
+.hero-visual img{
+    width:100%;
+    height:100%;
+    min-height:390px;
+    object-fit:cover;
+    display:block;
+}
+.sun{font-size:110px;filter:drop-shadow(0 10px 15px #00000018)}
+.float{position:absolute;background:#fff;border-radius:18px;padding:11px 15px;font-weight:800;box-shadow:0 12px 25px #0002}
+.f1{top:25px;left:22px}.f2{right:20px;bottom:30px}.f3{left:30px;bottom:45px}
+
+.quick{margin-top:-28px;position:relative;z-index:2}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:24px;box-shadow:0 12px 40px #23495718;overflow:hidden}
+.quick-item{padding:22px;text-align:center;border-right:1px solid #edf1f2}
+.quick-item:last-child{border:0}.quick-item strong{display:block;color:var(--dark);font-size:16px}.quick-item span{font-size:28px}
+
+section{padding:78px 0}
+.section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+.section-head h2{font-size:35px;color:var(--dark);margin-bottom:8px}
+.section-head p{color:#72828a}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #edf1f2;border-radius:23px;padding:29px;box-shadow:0 9px 28px #1836420a}
+.card .icon{font-size:40px;margin-bottom:14px}.card h3{color:var(--dark);margin-bottom:8px}
+.card p{font-size:15px}.card:hover{transform:translateY(-4px);transition:.2s;box-shadow:0 15px 35px #18364214}
+
+.alt{background:#fbfcfc}
+.program{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.program .item{background:#fff;border-radius:20px;padding:24px;display:flex;gap:18px;box-shadow:0 8px 25px #18364209}
+.program .num{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff0c9;color:#bd7800;font-weight:900;flex:none}
+
+.classes{
+    display:flex;
+    justify-content:center;
+    gap:24px;
+}
+
+.class-card{
+    width:370px;
+}
+.class-card{border-radius:22px;overflow:hidden;background:#fff;border:1px solid #edf1f2;box-shadow:0 10px 30px #1836420a}
+.class-img{height:155px;display:grid;place-items:center;font-size:65px;background:linear-gradient(135deg,#ffe5a5,#ffd5e1)}
+.class-card:nth-child(2) .class-img{background:linear-gradient(135deg,#c9f4d0,#b9e8e8)}
+.class-card:nth-child(3) .class-img{background:linear-gradient(135deg,#ddd0ff,#c6e1ff)}
+.class-body{padding:21px}.class-body h3{color:var(--dark)}
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:190px 190px;gap:14px}
+.photo{border-radius:20px;display:grid;place-items:center;font-size:65px;background:linear-gradient(135deg,#ffe4a7,#ffd4df)}.gallery .photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.photo:nth-child(1){grid-row:span 2}.photo:nth-child(2){background:linear-gradient(135deg,#c7f5ce,#b8e9e9)}
+.photo:nth-child(3){background:linear-gradient(135deg,#d8c8ff,#c4e1ff)}.photo:nth-child(4){background:linear-gradient(135deg,#ffd0b3,#fff0b1)}
+.photo:nth-child(5){background:linear-gradient(135deg,#cce5ff,#d9f6db)}
+
+.admission{background:linear-gradient(120deg,#fff2c7,#e7f8ff);text-align:center}
+.admission .box{max-width:850px;margin:auto;background:#fff;padding:38px;border-radius:28px;box-shadow:0 15px 40px #1836420c}
+
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{border:1px solid #edf1f2;border-radius:20px;padding:24px;background:#fff}
+.date{color:#d98a00;font-weight:800;font-size:13px}.news-card h3{color:var(--dark);margin:8px 0}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{background:#f8fbfc;border-radius:25px;padding:30px}.contact-box h3{color:var(--dark);margin-bottom:15px}
+.contact-box p{margin:11px 0}
+.map-placeholder{min-height:240px;border-radius:22px;background:linear-gradient(135deg,#d9f1ff,#dff4dd);display:grid;place-items:center;font-size:55px}
+
+footer{background:var(--dark);color:#dce8eb;padding:38px 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer-grid h3{color:#fff;margin-bottom:10px}
+.copy{text-align:center;border-top:1px solid #ffffff22;margin-top:25px;padding-top:20px;font-size:13px}
+
+@media(max-width:850px){
+ .topbar .container{justify-content:center}.topbar .container span:last-child{display:none}
+ nav{display:none}.menu-btn{display:block}.hero-grid,.contact,.program{grid-template-columns:1fr}
+ h1{font-size:42px}.quick-grid{grid-template-columns:1fr 1fr}
+ .cards,.classes,.news{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}
+ .photo:nth-child(1){grid-row:span 1}.footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .hero{padding-top:55px}.hero-visual{min-height:290px}.sun{font-size:80px}
+ .quick-grid{grid-template-columns:1fr}.quick-item{border-right:0;border-bottom:1px solid #edf1f2}
+ h1{font-size:35px}.gallery{display:grid;grid-template-columns:1fr}
+ .photo{height:180px}.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>☀️ Mỗi ngày đến trường là một ngày vui</span>
+    <span>📞 Hotline: 0392985908</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">
+      <span class="logo-mark">☀️</span>
+      <span>NHÓM TRẺ ĐỘC LẬP THÁI DƯƠNG</span>
+    </a>
+    <nav>
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#chuong-trinh">Chương trình</a>
+      <a href="#lop-hoc">Lớp học</a>
+      <a href="#thu-vien">Thư viện</a>
+      <a href="#tin-tuc">Tin tức</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <button class="menu-btn">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"> Môi trường thân thiện • An toàn • Yêu thương</span>
+      <h1>Chào mừng bé đến với Nhóm Trẻ Độc Lập Thái Dương</h1>
+      <p>Nơi những năm tháng đầu đời của bé được nuôi dưỡng bằng tình yêu thương, niềm vui khám phá và những trải nghiệm đáng nhớ.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#lien-he">📩 Liên hệ nhà trường</a>
+        <a class="btn btn-outline" href="#gioi-thieu">Khám phá trường →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="images/anhtruong.jpg" alt="Ảnh trường">
+    </div>
+  </div>
+</section>
+
+<div class="quick">
+  <div class="container quick-grid">
+    <div class="quick-item"><span>🛡️</span><strong>An toàn</strong><small>Môi trường thân thiện</small></div>
+    <div class="quick-item"><span>👩🏻‍🏫</span><strong>Giáo viên</strong><small>Tận tâm & yêu trẻ</small></div>
+    <div class="quick-item"><span>🎨</span><strong>Trải nghiệm</strong><small>Học qua vui chơi</small></div>
+    <div class="quick-item"><span>🤝</span><strong>Đồng hành</strong><small>Kết nối gia đình</small></div>
+  </div>
+</div>
+
+<section id="gioi-thieu">
+  <div class="container">
+    <div class="section-head">
+      <h2>Vì sao chọn Thái Dương?</h2>
+      <p>Những giá trị hướng tới một tuổi thơ vui vẻ, tự tin và giàu trải nghiệm.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">🛡️</div><h3>An toàn & yêu thương</h3><p>Chú trọng môi trường học tập thân thiện, an toàn và quan tâm đến từng em bé.</p></div>
+      <div class="card"><div class="icon">🎨</div><h3>Học qua trải nghiệm</h3><p>Khuyến khích trẻ khám phá, sáng tạo và học hỏi thông qua các hoạt động phù hợp lứa tuổi.</p></div>
+      <div class="card"><div class="icon">👩🏻‍🏫</div><h3>Giáo viên tận tâm</h3><p>Đồng hành cùng trẻ và phối hợp với gia đình trong quá trình chăm sóc, giáo dục.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="chuong-trinh">
+  <div class="container">
+    <div class="section-head">
+      <h2>Chương trình & hoạt động</h2>
+      <p></p>
+    </div>
+    <div class="program">
+      <div class="item"><div class="num">01</div><div><h3>Khám phá & học tập</h3><p>Làm quen chữ cái, con số, thế giới tự nhiên và kỹ năng phù hợp với lứa tuổi.</p></div></div>
+      <div class="item"><div class="num">02</div><div><h3>Âm nhạc & nghệ thuật</h3><p>Hát, múa, vẽ và tạo hình để trẻ tự tin thể hiện cảm xúc và khả năng sáng tạo.</p></div></div>
+      <div class="item"><div class="num">03</div><div><h3>Vận động & vui chơi</h3><p>Hoạt động vận động giúp trẻ khỏe mạnh, nhanh nhẹn và hình thành thói quen tích cực.</p></div></div>
+      <div class="item"><div class="num">04</div><div><h3>Kỹ năng & giao tiếp</h3><p>Rèn luyện sự tự lập, giao tiếp và khả năng hợp tác thông qua hoạt động hằng ngày.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="lop-hoc">
+  <div class="container">
+    <div class="section-head">
+      <h2>NHÓM LỚP 24-36 THÁNG</h2>
+      <p></p>
+    </div>
+    <div class="classes">
+      <div class="class-card"><div class="class-img">👶🏻</div><div class="class-body"><h3>Nhóm trẻ</h3><p>Chăm sóc, làm quen môi trường và phát triển kỹ năng ban đầu.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="thu-vien">
+  <div class="container">
+    <div class="section-head">
+      <h2>Thư viện hình ảnh</h2>
+      <p></p>
+    </div>
+    <div class="gallery">
+      <div class="photo"><img src="images/anhtruong.jpg" alt="Ảnh trường"></div>
+<div class="photo"><img src="images/anh2.jpg" alt="Ảnh hoạt động"></div>
+<div class="photo"><img src="images/anh3.jpg" alt="Ảnh các bé"></div>
+<div class="photo"><img src="images/anh4.jpg" alt="Ảnh trường"></div>
+    </div>
+  </div>
+</section>
+
+<section class="admission">
+  <div class="container">
+    <div class="box">
+      <h2>🎓 Thông tin tuyển sinh</h2>
+      <p>Nhà trường chào đón các bé đến với môi trường học tập vui vẻ, an toàn và giàu trải nghiệm.</p>
+      <a class="btn btn-primary" href="#lien-he">Đăng ký tư vấn</a>
+    </div>
+  </div>
+</section>
+
+<section id="tin-tuc">
+  <div class="container">
+    <div class="section-head">
+      <h2>Tin tức & thông báo</h2>
+      <p></p>
+    </div>
+    <div class="news">
+      <article class="news-card"><span class="date">THÔNG BÁO</span><h3>Thông tin tuyển sinh</h3><p>TUYỂN SINH THÁNG 9 </p></article>
+      <article class="news-card"><span class="date">HOẠT ĐỘNG</span><h3>Hoạt động của bé</h3><p></p></article>
+      <article class="news-card"><span class="date">NHÀ TRƯỜNG</span><h3>Thông báo mới</h3><p></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="lien-he">
+  <div class="container">
+    <div class="section-head">
+      <h2>Liên hệ với nhà trường</h2>
+    </div>
+    <div class="contact">
+      <div class="contact-box">
+        <h3>🏫 Nhóm Trẻ Độc Lập Thái Dương</h3>
+        <p>📍 <strong>Địa chỉ:</strong> Đồng Lạc, Nam Sách, Hải Phòng</p>
+        <p>☎️ <strong>Điện thoại:</strong> 0392985908</p>
+        <p>✉️ <strong>Email:</strong> hoangthidieutin@gmail.com</p>
+        <p>📘 <strong>Facebook:</strong> Đang cập nhật </p>
+      </div>
+      <div class="map-placeholder">
+    <iframe
+        src="https://www.google.com/maps?q=20.979056,106.344361&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3>☀️ Nhóm Trẻ Độc Lập Thái Dương</h3><p>Nơi bé vui chơi, khám phá và lớn lên trong yêu thương.</p></div>
+    <div><h3>Liên kết</h3><p>Giới thiệu · Chương trình · Thư viện</p></div>
+    <div><h3>Liên hệ</h3><p>📞0392985908 </p><p>📍 Đồng Lạc, Nam Sách, Hải Phòng</p></div>
+  </div>
+  <div class="container copy">© 2026 Nhóm Trẻ Độc Lập Thái Dương · Website giới thiệu trường</div>
+</footer>
+
+</body>
+</html>
